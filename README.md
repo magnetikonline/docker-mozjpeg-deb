@@ -1,10 +1,12 @@
 # mozjpeg Dockerfile
 Produces a working mozjpeg binary deb distribution, suitable for Ubuntu (tested under 14.04LTS) and possibly Debian/variants.
 
-Docker image uses Ubuntu 14.04LTS as the base image, deb package is produced using [http://asic-linux.com.mx/~izto/checkinstall/](checkinstall). The resulting binaries/libs are installed to `/opt/libmozjpeg/` (probably as not to mess with `libjpeg-turbo*` packages) - but you could always change this/symlink things.
+Docker image uses Ubuntu 14.04LTS as the base, deb package is produced using [checkinstall](http://asic-linux.com.mx/~izto/checkinstall/).
+
+The resulting binaries/libs are installed to `/opt/libmozjpeg/` (probably as not to mess with `libjpeg-turbo*` packages) - but you could always change make options or symlink things.
 
 ## Usage
-With docker already installed and working on host system:
+With Docker already installed and working on host system:
 
 ```sh
 $ ./build.sh

@@ -5,6 +5,8 @@ Docker image uses Ubuntu 14.04LTS as the base, deb package is produced using [ch
 
 The resulting binaries/libs are installed to `/opt/libmozjpeg/` (probably as not to mess with `libjpeg-turbo*` packages) - but you could always change make options or symlink things.
 
+Not sure what mozjpeg is? See here: https://github.com/mozilla/mozjpeg.
+
 ## Usage
 With Docker already installed and working on host system:
 

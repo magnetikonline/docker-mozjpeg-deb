@@ -17,14 +17,14 @@ $ ./build.sh
 $ ./extractdeb.sh
 # package extract from container
 
-$ ls -l mozjpeg_2.0.1-1_amd64.deb
--rw-r--r-- 1 root root 357528 Aug 11 16:54 mozjpeg_2.0.1-1_amd64.deb
+$ ls -l mozjpeg_2.1-1_amd64.deb
+-rw-r--r-- 1 root root 361042 Aug 16 13:39 mozjpeg_2.1-1_amd64.deb
 
-$ sudo dpkg -i mozjpeg_2.0.1-1_amd64.deb
+$ sudo dpkg -i mozjpeg_2.1-1_amd64.deb
 # installing package to host system...
 
 $ /opt/libmozjpeg/bin/jpegtran -v
-libmozjpeg version 2.0.1 (build 20140811)
+libmozjpeg version 2.1 (build 20140816)
 Copyright (C) 1991-2012 Thomas G. Lane, Guido Vollbeding
 Copyright (C) 1999-2006 MIYASAKA Masaru
 Copyright (C) 2009 Pierre Ossman for Cendio AB

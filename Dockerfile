@@ -1,4 +1,4 @@
-FROM ubuntu:14.04.1
+FROM ubuntu:14.04.2
 MAINTAINER Peter Mescalchin "peter@magnetikonline.com"
 
 RUN apt-get update && apt-get -y upgrade
@@ -8,7 +8,7 @@ RUN apt-get clean
 RUN mkdir /root/build
 ADD https://github.com/mozilla/mozjpeg/archive/v3.0.tar.gz /root/build/
 WORKDIR /root/build
-RUN tar xf v3.0.tar.gz
+RUN tar -xf v3.0.tar.gz
 
 WORKDIR /root/build/mozjpeg-3.0
 RUN autoreconf -fiv

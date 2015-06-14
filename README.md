@@ -17,14 +17,14 @@ $ ./build.sh
 $ ./extractdeb.sh
 # package extract from container
 
-$ ls -l mozjpeg_3.0-1_amd64.deb
--rw-r--r-- 1 root root 384106 Mar  4 22:28 mozjpeg_3.0-1_amd64.deb
+$ ls -l mozjpeg_3.1-1_amd64.deb
+-rw-r--r-- 1 root root 385728 Jun 14 18:51 mozjpeg_3.1-1_amd64.deb
 
 $ sudo dpkg -i mozjpeg_3.0-1_amd64.deb
 # installing package to host system...
 
 $ /opt/mozjpeg/bin/jpegtran -v
-mozjpeg version 3.0 (build 20150304)
+mozjpeg version 3.1 (build 20150614)
 Copyright (C) 1991-2012 Thomas G. Lane, Guido Vollbeding
 Copyright (C) 1999-2006 MIYASAKA Masaru
 Copyright (C) 2009 Pierre Ossman for Cendio AB

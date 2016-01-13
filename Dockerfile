@@ -1,5 +1,5 @@
 FROM ubuntu:14.04.3
-MAINTAINER Peter Mescalchin "peter@magnetikonline.com"
+MAINTAINER Peter Mescalchin <peter@magnetikonline.com>
 
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get -y install autoconf checkinstall libpng12-dev libtool make nasm pkg-config

@@ -1,3 +1,3 @@
 #!/bin/bash -e
 
-docker build -t magnetikonline/buildmozjpeg .
+docker build --tag magnetikonline/buildmozjpeg .

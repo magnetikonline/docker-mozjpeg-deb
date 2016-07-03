@@ -1,11 +1,13 @@
 # mozjpeg Dockerfile
-Produces a working mozjpeg binary deb distribution, suitable for Ubuntu (tested under 14.04LTS) and possibly Debian/variants.
+Produces a working mozjpeg binary deb distribution, suitable for Ubuntu (tested under 16.04LTS) and possibly Debian/variants.
 
-Docker image uses Ubuntu 14.04LTS as the base, deb package is produced using [checkinstall](http://asic-linux.com.mx/~izto/checkinstall/).
+Docker image uses Ubuntu 16.04LTS as the base, deb package is produced using [checkinstall](http://asic-linux.com.mx/~izto/checkinstall/).
 
 The resulting binaries/libs are installed to `/opt/mozjpeg/` (as not to clash with `libjpeg-turbo*` packages) - but you could always change `make` options or symlink things.
 
-Not sure what mozjpeg is? See here: https://github.com/mozilla/mozjpeg.
+Image has also been pushed to [Docker Hub](https://hub.docker.com/r/magnetikonline/mozjpegdeb/).
+
+Not sure what mozjpeg is? https://github.com/mozilla/mozjpeg.
 
 ## Usage
 With Docker already installed and working on host system:
@@ -13,6 +15,9 @@ With Docker already installed and working on host system:
 ```sh
 $ ./build.sh
 # waiting... as Docker builds image
+
+# or alternatively to ./build.sh:
+# $ docker pull magnetikonline/mozjpegdeb
 
 $ ./extractdeb.sh
 # package extract from container

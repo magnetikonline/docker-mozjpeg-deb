@@ -3,8 +3,8 @@ MAINTAINER Peter Mescalchin <peter@magnetikonline.com>
 
 ENV VERSION 3.2
 
-RUN apt-get update && apt-get -y upgrade && \
-	apt-get -y install autoconf checkinstall libpng12-dev libtool make nasm pkg-config && \
+RUN apt-get update && apt-get upgrade --yes && \
+	apt-get install --yes autoconf checkinstall libpng12-dev libtool make nasm pkg-config && \
 	apt-get clean
 
 ADD https://github.com/mozilla/mozjpeg/archive/v$VERSION.tar.gz /root/build/

@@ -1,3 +1,7 @@
 #!/bin/bash -e
 
-docker build --tag magnetikonline/buildmozjpeg .
+DIRNAME=$(dirname "$0")
+
+docker build \
+	--tag magnetikonline/buildmozjpeg \
+	"$DIRNAME"

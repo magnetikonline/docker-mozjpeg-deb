@@ -1,21 +1,30 @@
 FROM ubuntu:16.04
 MAINTAINER Peter Mescalchin <peter@magnetikonline.com>
 
+ENV VERSION 3.2
+
 RUN apt-get update && apt-get -y upgrade && \
 	apt-get -y install autoconf checkinstall libpng12-dev libtool make nasm pkg-config && \
 	apt-get clean
 
-ADD https://github.com/mozilla/mozjpeg/archive/v3.1.tar.gz /root/build/
+ADD https://github.com/mozilla/mozjpeg/archive/v$VERSION.tar.gz /root/build/
 WORKDIR /root/build
-RUN tar -xf v3.1.tar.gz
+RUN tar --extract --file v$VERSION.tar.gz
 
-WORKDIR /root/build/mozjpeg-3.1
+WORKDIR /root/build/mozjpeg-$VERSION
 RUN autoreconf -fiv
 RUN mkdir build
-WORKDIR /root/build/mozjpeg-3.1/build
+WORKDIR /root/build/mozjpeg-$VERSION/build
 RUN ../configure && make
 
-RUN echo "magnetikonline: mozjpeg v3.1" >description-pak && \
-	checkinstall -Dy --install=no --nodoc --pkgname=mozjpeg --pkgversion=3.1 make -i install
+RUN echo "magnetikonline: mozjpeg" >description-pak && \
+	checkinstall \
+		--default \
+		--install=no \
+		--nodoc \
+		--pkgname=mozjpeg \
+		--pkgversion=$VERSION \
+		--type=debian \
+			make --ignore-errors install
 
 CMD ["/bin/bash"]

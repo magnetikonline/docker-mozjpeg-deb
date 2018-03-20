@@ -22,15 +22,15 @@ $ ./build.sh
 $ ./extractdeb.sh
 # package extract from container
 
-$ ls -l mozjpeg_3.2-1_amd64.deb
--rw-r--r-- 1 root root 428528 Dec 10 12:36 mozjpeg_3.2-1_amd64.deb
+$ ls -l mozjpeg_3.3.1-1_amd64.de
+-rw-r--r-- 1 root root 430092 Mar 21 01:11 mozjpeg_3.3.1-1_amd64.deb
 
-$ sudo dpkg -i mozjpeg_3.2-1_amd64.deb
+$ sudo dpkg -i mozjpeg_3.3.1-1_amd64.de
 # installing package to host system...
 
 $ /opt/mozjpeg/bin/jpegtran -v -version
-mozjpeg version 3.2 (build 20171210)
-Copyright (C) 2009-2016 D. R. Commander
+mozjpeg version 3.3.1 (build 20180320)
+Copyright (C) 2009-2017 D. R. Commander
 Copyright (C) 2011-2016 Siarhei Siamashka
 Copyright (C) 2015-2016 Matthieu Darbois
 Copyright (C) 2015 Google, Inc.
@@ -44,7 +44,7 @@ Copyright (C) 1991-2016 Thomas G. Lane, Guido Vollbeding
 
 Emulating The Independent JPEG Group's software, version 6b  27-Mar-1998
 
-mozjpeg version 3.2 (build 20171210)
+mozjpeg version 3.3.1 (build 20180320)
 ```
 
 Done.

@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER Peter Mescalchin <peter@magnetikonline.com>
 
-ENV VERSION 3.2
+ENV VERSION 3.3.1
 
 RUN apt-get update && apt-get upgrade --yes && \
 	apt-get install --yes autoconf checkinstall libpng12-dev libtool make nasm pkg-config && \

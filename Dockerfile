@@ -1,20 +1,22 @@
-FROM ubuntu:16.04
-MAINTAINER Peter Mescalchin <peter@magnetikonline.com>
+FROM ubuntu:18.04
+LABEL maintainer="Peter Mescalchin <peter@magnetikonline.com>"
 
-ENV VERSION 3.3.1
+ARG MOZJPEG_VERSION
 
-RUN apt-get update && apt-get upgrade --yes && \
-	apt-get install --yes autoconf checkinstall libpng12-dev libtool make nasm pkg-config && \
+RUN DEBIAN_FRONTEND="noninteractive" \
+	apt-get update && \
+	apt-get install --no-install-recommends --yes \
+		automake checkinstall libpng-dev libtool make nasm pkg-config && \
 	apt-get clean
 
-ADD https://github.com/mozilla/mozjpeg/archive/v$VERSION.tar.gz /root/build/
+ADD https://github.com/mozilla/mozjpeg/archive/v$MOZJPEG_VERSION.tar.gz /root/build/
 WORKDIR /root/build
-RUN tar --extract --file v$VERSION.tar.gz
+RUN tar --extract --file v$MOZJPEG_VERSION.tar.gz
 
-WORKDIR /root/build/mozjpeg-$VERSION
+WORKDIR /root/build/mozjpeg-$MOZJPEG_VERSION
 RUN autoreconf -fiv
 RUN mkdir build
-WORKDIR /root/build/mozjpeg-$VERSION/build
+WORKDIR /root/build/mozjpeg-$MOZJPEG_VERSION/build
 RUN ../configure && make
 
 RUN echo "magnetikonline: mozjpeg" >description-pak && \
@@ -23,8 +25,8 @@ RUN echo "magnetikonline: mozjpeg" >description-pak && \
 		--install=no \
 		--nodoc \
 		--pkgname=mozjpeg \
-		--pkgversion=$VERSION \
+		--pkgversion=$MOZJPEG_VERSION \
 		--type=debian \
 			make --ignore-errors install
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]

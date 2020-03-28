@@ -3,6 +3,9 @@
 DIRNAME=$(dirname "$0")
 
 
+. "$DIRNAME/version"
+
 docker build \
-	--tag magnetikonline/buildmozjpeg \
-	"$DIRNAME"
+	--build-arg "MOZJPEG_VERSION=$MOZJPEG_VERSION" \
+	--tag "magnetikonline/buildmozjpeg:$MOZJPEG_VERSION" \
+		"$DIRNAME"

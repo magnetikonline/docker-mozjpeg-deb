@@ -1,17 +1,15 @@
 # mozjpeg Dockerfile
-Produces a working mozjpeg binary deb distribution, suitable for Ubuntu (tested under 16.04LTS) and possibly Debian/variants.
+Produces a `mozjpeg` binary deb distribution, suitable for Ubuntu (tested under 18.04LTS) and likely Debian variants.
 
-Docker image uses Ubuntu 16.04LTS as the base, deb package is produced using [checkinstall](http://asic-linux.com.mx/~izto/checkinstall/).
+Package built using [checkinstall](http://asic-linux.com.mx/~izto/checkinstall/).
 
-The resulting binaries/libs are installed to `/opt/mozjpeg/` (as not to clash with `libjpeg-turbo*` packages) - but you could always change `make` options or symlink things.
+The resulting binaries/libs are installed to `/opt/mozjpeg/` (as not to clash with `libjpeg-turbo*` packages).
 
 Image has also been pushed to [Docker Hub](https://hub.docker.com/r/magnetikonline/mozjpegdeb/).
 
 Not sure what mozjpeg is? https://github.com/mozilla/mozjpeg.
 
 ## Usage
-With Docker already installed and working on host system:
-
 ```sh
 $ ./build.sh
 # waiting... as Docker builds image
@@ -22,14 +20,14 @@ $ ./build.sh
 $ ./extractdeb.sh
 # package extract from container
 
-$ ls -l mozjpeg_3.3.1-1_amd64.de
--rw-r--r-- 1 root root 430092 Mar 21 01:11 mozjpeg_3.3.1-1_amd64.deb
+$ ls -l mozjpeg_3.3.1-1_amd64.deb
+-rw-r--r-- 1 root root 401960 Mar 28 23:29 mozjpeg_3.3.1-1_amd64.deb
 
-$ sudo dpkg -i mozjpeg_3.3.1-1_amd64.de
+$ sudo dpkg -i mozjpeg_3.3.1-1_amd64.deb
 # installing package to host system...
 
 $ /opt/mozjpeg/bin/jpegtran -v -version
-mozjpeg version 3.3.1 (build 20180320)
+mozjpeg version 3.3.1 (build 20200328)
 Copyright (C) 2009-2017 D. R. Commander
 Copyright (C) 2011-2016 Siarhei Siamashka
 Copyright (C) 2015-2016 Matthieu Darbois
@@ -44,7 +42,7 @@ Copyright (C) 1991-2016 Thomas G. Lane, Guido Vollbeding
 
 Emulating The Independent JPEG Group's software, version 6b  27-Mar-1998
 
-mozjpeg version 3.3.1 (build 20180320)
+mozjpeg version 3.3.1 (build 20200328)
 ```
 
 Done.

@@ -5,7 +5,7 @@ Package built using [checkinstall](http://asic-linux.com.mx/~izto/checkinstall/)
 
 The resulting binaries/libs are installed to `/opt/mozjpeg/` (as not to clash with `libjpeg-turbo*` packages).
 
-Image has also been pushed to [Docker Hub](https://hub.docker.com/r/magnetikonline/mozjpegdeb/).
+Image has also been pushed to [Docker Hub](https://hub.docker.com/r/magnetikonline/mozjpeg-deb).
 
 Not sure what mozjpeg is? https://github.com/mozilla/mozjpeg.
 

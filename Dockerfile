@@ -6,7 +6,14 @@ ARG MOZJPEG_VERSION
 RUN DEBIAN_FRONTEND="noninteractive" \
 	apt-get update && \
 	apt-get install --no-install-recommends --yes \
-		automake checkinstall libpng-dev libtool make nasm pkg-config && \
+		automake \
+		checkinstall \
+		libpng-dev \
+		libtool \
+		make \
+		nasm \
+		pkg-config && \
+	# clean up
 	apt-get clean
 
 ADD https://github.com/mozilla/mozjpeg/archive/v$MOZJPEG_VERSION.tar.gz /root/build/
